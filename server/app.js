@@ -51,13 +51,14 @@ var mongoURI = '';
 if(process.env.MONGODB_URI !== undefined) {
     mongoURI = process.env.MONGODB_URI;
 } else {
-    mongoURI = 'mongodb://localhost:27017/new_mongo_db';
+    // mongoURI = 'mongodb://localhost:27017/new_mongo_db';
 
     // change to m-lab later when hosting
+    mongoURI = 'mongodb://one_shelf_over:xbr2nma3@ds151973.mlab.com:51973/one_shelf_over';
     // mongoURI = 'mongodb://bairdcraig10:xbr2nma3@ds133261.mlab.com:33261/new_mongo_db';
 }
 
-var mongoURI = 'mongodb://localhost:27017/passport';
+// var mongoURI = 'mongodb://localhost:27017/passport';
 var mongoDB = mongoose.connect(mongoURI).connection;
 
 mongoDB.on('error', function(err){
