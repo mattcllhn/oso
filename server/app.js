@@ -11,11 +11,11 @@ var session = require('express-session');
 var index = require('./routes/index');
 
 // user routes go here
-
 var user = require('./routes/user');
 var register = require('./routes/register');
 
 // custom routes go here
+
 
 
 // Body parser middleware
@@ -44,6 +44,8 @@ app.use('/user', user);
 
 // custom routes go here
 
+
+
 app.use('/', index);
 
 // Mongo Connection //
@@ -55,7 +57,6 @@ if(process.env.MONGODB_URI !== undefined) {
 
     // change to m-lab later when hosting
     mongoURI = 'mongodb://one_shelf_over:xbr2nma3@ds151973.mlab.com:51973/one_shelf_over';
-    // mongoURI = 'mongodb://bairdcraig10:xbr2nma3@ds133261.mlab.com:33261/new_mongo_db';
 }
 
 // var mongoURI = 'mongodb://localhost:27017/passport';

@@ -1,5 +1,3 @@
-// Sets up Users Table in Mongo
-
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
@@ -11,7 +9,6 @@ var UserSchema = new Schema({
     password: {type: String, required: true}
 });
 
-// Called before adding a new user to the DB. Encrypts password.
 UserSchema.pre('save', function(next) {
     var user = this;
 
