@@ -32,6 +32,25 @@ myApp.config(['$routeProvider', '$locationProvider',
         }]
       }
     })
+    .when('/myBookShelf', {
+      templateUrl: '/views/templates/myBookShelf.html',
+      controller: 'MyBookShelfController',
+      resolve: {
+        getuser : ['UserService', function(UserService){
+          return UserService.getuser();
+        }]
+      }
+    })
+    .when('/otherBookShelves', {
+      templateUrl: '/views/templates/otherBookShelves.html',
+      controller: 'OtherBookShelvesController',
+      resolve: {
+        getuser : ['UserService', function(UserService){
+          return UserService.getuser();
+        }]
+      }
+    })
+
     .otherwise({
       redirectTo: 'home'
     });
