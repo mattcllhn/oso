@@ -1,6 +1,9 @@
 a {
     text-decoration: none;
 }
+.btn {
+    margin: 10px;
+}
 .headerContainer {
     height: 75px;
     width: auto;
