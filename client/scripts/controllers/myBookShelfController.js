@@ -5,9 +5,9 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
 
   $scope.searchForBook = function(searchFromUser) {
       console.log("searching for  ", searchFromUser);
-      var book = search.name;
+      var search = search.name;
   };
 
   // connect controller data to factory data here
 
-}]); // end myApp.controller
+}]); 
