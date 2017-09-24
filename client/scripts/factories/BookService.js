@@ -1,5 +1,5 @@
-myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $location){
-  console.log('MyBookShelfService Loaded');
+// myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $location){
+//   console.log('MyBookShelfService Loaded');
 
   // var userObject = {};
   //
@@ -30,4 +30,4 @@ myApp.factory('MyBookShelfService', ['$http', '$location', function($http, $loca
   //       });
   //   }
   // };
-}]);
+// }]);
