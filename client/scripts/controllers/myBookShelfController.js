@@ -3,8 +3,8 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
   $scope.logout = UserService.logout;
   // $scope.search = {};
 
-  $scope.searchForBook = function(bookInput) {
-      console.log("button clicked", bookInput);
+  $scope.findBook = function(bookToSearch) {
+      console.log("button clicked", bookToSearch);
   };
 
   // connect controller data to factory data here
