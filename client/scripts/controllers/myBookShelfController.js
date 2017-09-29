@@ -5,6 +5,8 @@ myApp.controller('MyBookShelfController', ['$scope', '$http', '$location', 'User
 
   $scope.findBook = function(bookToSearch) {
       console.log("button clicked", bookToSearch);
+      var book = bookToSearch;
+      ApiService.getBooks(book);
   };
 
   // connect controller data to factory data here

@@ -1,10 +1,17 @@
 myApp.factory('ApiService', ['$http', function($http){
   console.log('Api Service Loaded');
 
-$scope.searchForBook = function(){
-  // console.log("Find Recipes button clicked", $scope.selectedIng);
-  var input = $scope.selectedIng;
-  ApiService.getRecipes(input);
-}; // end ingredients.submit
+    var bookInfoFromApi = {};
+
+    return {
+        bookInfoFromApi : bookInfoFromApi,
+        getBooks : function(book){
+          $http.get("/api/" + ingredients).then(function(response){
+            infoFromApi.response = response.data;
+            $location.path("/recipeResults");
+            console.log("relevant recipes", response);
+          }); //end $http.get
+        },//end getSpoonacular
+    };
 
 }]);
