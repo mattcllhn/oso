@@ -6,10 +6,10 @@ myApp.factory('ApiService', ['$http', function($http){
     return {
         bookInfoFromApi : bookInfoFromApi,
         getBooks : function(book){
-          $http.get("/api/" + ingredients).then(function(response){
+          $http.get("/googleBooksApi/" + ingredients).then(function(response){
             infoFromApi.response = response.data;
-            $location.path("/recipeResults");
-            console.log("relevant recipes", response);
+            $location.path("/bookResults");
+            console.log("book results", response);
           }); //end $http.get
         },//end getSpoonacular
     };
