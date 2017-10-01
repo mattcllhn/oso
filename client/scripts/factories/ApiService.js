@@ -11,7 +11,7 @@ myApp.factory('ApiService', ['$http', function($http){
             $location.path("/bookResults");
             console.log("book results", response);
           }); //end $http.get
-        },//end getSpoonacular
+        }, //end getBooks
     };
 
 }]);
