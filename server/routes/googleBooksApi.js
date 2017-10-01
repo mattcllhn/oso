@@ -2,7 +2,6 @@ var express = require("express");
 var router = express.Router();
 var path = require("path");
 
-// API call to get images and id for recipes
 router.get("/:books", function(req, res){
   var books = req.params.books;
       $http.get("www.googleapis.com/books/v1/volumes?q=isbn:$isbn")
