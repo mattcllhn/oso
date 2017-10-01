@@ -6,7 +6,7 @@ myApp.factory('ApiService', ['$http', function($http){
     return {
         bookInfoFromApi : bookInfoFromApi,
         getBooks : function(book){
-          $http.get("/googleBooksApi/" + ingredients).then(function(response){
+          $http.get("/googleBooksApi/" + book).then(function(response){
             infoFromApi.response = response.data;
             $location.path("/bookResults");
             console.log("book results", response);
