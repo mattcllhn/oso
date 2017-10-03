@@ -9,7 +9,8 @@ router.get('/:isbn', function(req, res){
       https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
     //   https.get('https://www.googleapis.com/books/v1/volumes?q=' + isbn)
         .end(function (result) {
-        console.log(result.status, result.headers, result.body);
+        // console.log(result.status, result.headers, result.body);
+        console.log(result.kind, result.items, result.totalItems);
         res.send(result.body);
   }); // end http.get
 });
