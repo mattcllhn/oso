@@ -5,9 +5,13 @@ var https = require('https');
 
 router.get('/:isbn', function(req, res){
   var isbn = req.params.isbn;
-  console.log('in /isbn in googleBooksApi.js', isbn);
-      https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
+  console.log('in /:isbn in googleBooksApi.js', isbn);
+    //   https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
+      https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' +
+                 isbn + '&key=AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4')
+      // API Key: AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4
         .end(function (result) {
+        console.log(result);
         console.log(result.items[0]);
         res.send(result.items[0]);
   }); // end http.get
