@@ -6,9 +6,9 @@ var https = require('https');
 // API Key: AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4
 
 router.get('/:isbn', function(req, res){
-  console.log('in /:isbn in googleBooksApi.js', isbn);
   var isbn = req.params.isbn;
   var apiKey = 'AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4';
+  console.log('in /:isbn in googleBooksApi.js', isbn);
  //   https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
  // this route should work ^
       https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + apiKey)
