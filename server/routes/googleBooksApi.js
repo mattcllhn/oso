@@ -13,8 +13,8 @@ router.get('/:isbn', function(req, res){
  // I'm experimenting with adding my Google Books Api Key Here ^
         .end(function (response) {
         console.log(response);
-        console.log(response.kind);
-        console.log(response.result.items[0].kind);
+        // console.log(response.kind);
+        // console.log(response.result.items[0].kind);
         res.send(response);
   }); // end http.get
 });
