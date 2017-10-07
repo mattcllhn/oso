@@ -3,8 +3,6 @@ var router = express.Router();
 var path = require('path');
 var https = require('https');
 
-// API Key: AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4
-
 router.get('/:isbn', function(req, res){
   var isbn = req.params.isbn;
   var apiKey = 'AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4';
