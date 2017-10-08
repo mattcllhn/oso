@@ -4,19 +4,20 @@ var path = require('path');
 var https = require('https');
 
 router.get('/:isbn', function(req, res){
-  var isbn = req.params.isbn;
-  var apiKey = 'AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4';
-  console.log('in /:isbn in googleBooksApi.js', isbn);
-    //   https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
- // this route should work ^
-      https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + '&' + apiKey)
- // I'm experimenting with adding my Google Books Api Key Here ^
-        .end(function (response) {
-        console.log(response);
-        // console.log(response.kind);
-        // console.log(response.result.items[0].kind);
-        res.send(response);
-  }); // end http.get
+    var isbn = req.params.isbn;
+    var url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn;
+    console.log('in /:isbn in googleBooksApi.js', isbn);
+        https.get(url, function (res){
+            res.setEncoding('utf8');
+            var body = '';
+            res.on('data', function(data){
+                body += data;
+            });
+            res.on('end', function() {
+                body = JSON.parse(body);
+                console.log(body);
+            });
+        });
 });
 
 module.exports = router;
@@ -32,9 +33,51 @@ module.exports = router;
 
 
 
+///////////////////////////////////////////////////////////////////////////////
+// What I was originally trying
+
+// var express = require('express');
+// var router = express.Router();
+// var path = require('path');
+// var https = require('https');
+//
+// router.get('/:isbn', function(req, res){
+//   var isbn = req.params.isbn;
+//   var apiKey = 'AIzaSyAFGKTlgzg7-XzMg6Yzo8dx9vrLPiIeyh4';
+//   console.log('in /:isbn in googleBooksApi.js', isbn);
+//     //   https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn)
+//  // this route should work ^
+//       https.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + '&' + apiKey)
+//  // I'm experimenting with adding my Google Books Api Key Here ^
+//         .end(function (response) {
+//         console.log(response);
+//         // console.log(response.kind);
+//         // console.log(response.result.items[0].kind);
+//         res.send(response);
+//   }); // end http.get
+// });
+//
+// module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
-// Other Stuff I was trying
+// Something else I was trying
+
+// var express = require('express');
+// var router = express.Router();
+// var path = require('path');
+// var https = require('https');
 
 // router.get('/:isbn', function(req, res){
 //   var isbn = req.params.isbn;
